@@ -1,4 +1,3 @@
-# evaluate.py
 import os
 from src.preprocessing import preprocess_image
 from src.utils import rank_and_select_best_caption
@@ -10,16 +9,12 @@ bert_tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 image_dir = 'data/dataset/flickr30k_images/images'
 
 def generate_caption(image, model, tokenizer, max_len):
-    """
-    Generate a caption for an image using the trained model.
-    """
-    # Add caption generation code here, e.g., using beam search
+    
+    
     pass
 
 def evaluate_model(image_dir, model, tokenizer, max_len):
-    """
-    Evaluate the model on a set of images.
-    """
+    
     for image_file in os.listdir(image_dir):
         image = preprocess_image(os.path.join(image_dir, image_file))
         caption = generate_caption(image, model, tokenizer, max_len)

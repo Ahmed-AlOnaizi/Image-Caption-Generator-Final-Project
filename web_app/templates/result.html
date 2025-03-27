@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Caption</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        img { max-width: 80%; margin-top: 20px; border-radius: 10px; }
+        p { font-size: 18px; font-weight: bold; }
+        button { 
+            margin-top: 15px; 
+            padding: 10px 15px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            background-color: #007BFF; 
+            color: white; 
+            border: none; 
+            border-radius: 5px;
+        }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Generated Caption</h1>
+    <img src="{{ image_url }}" alt="Uploaded Image">
+    <p id="caption-text">{{ caption }}</p>
+
+    <!-- Button to trigger text-to-speech -->
+    <button onclick="speakCaption()">🔊 Speak Caption</button>
+
+    <a href="/">Upload Another Image</a>
+
+    <script>
+        function speakCaption() {
+            let captionText = document.getElementById('caption-text').textContent;
+            let speech = new SpeechSynthesisUtterance();
+            speech.text = captionText;
+            speech.lang = "en-US";  // Adjust the language if needed
+            speech.volume = 1;       // Volume (0 to 1)
+            speech.rate = 1;         // Speed (0.1 to 2)
+            speech.pitch = 1;        // Pitch (0 to 2)
+
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+</body>
+</html>
+

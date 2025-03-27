@@ -6,7 +6,7 @@ from tensorflow.keras.applications import InceptionV3 # type: ignore
 
 def build_encoder():
     """
-    Build the CNN encoder to extract image features.
+     CNN encoder to extract image features.
     """
     base_model = InceptionV3(weights='imagenet')
     model = Model(inputs=base_model.input, outputs=base_model.layers[-2].output)
@@ -14,7 +14,7 @@ def build_encoder():
 
 def build_captioning_model(vocab_size, max_len, embedding_dim=256):
     """
-    Define the image captioning model with a CNN encoder and an RNN-based decoder.
+     image captioning model with a CNN encoder and an RNN-based decoder.
     """
     # Encoder
     image_input = Input(shape=(2048,))

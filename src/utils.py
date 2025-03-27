@@ -1,4 +1,3 @@
-# utils.py
 
 from transformers import BertTokenizer, BertForMaskedLM
 import torch
